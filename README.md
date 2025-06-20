@@ -37,4 +37,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 ## Implementation Notes
-The sidebar navigation uses the Next.js <Link> component instead of <a> to enable client-side routing and preserve React state. To do this, we had to add 'use client' to the Sidebar.tsx component. This is because, by default, all components are SSR (server-side rendering), and we don't have access to the pathname, since it is on the client side.
+- The sidebar navigation uses the Next.js <Link> component instead of <a> to enable client-side routing and preserve React state. To do this, we had to add 'use client' to the Sidebar.tsx component. This is because, by default, all components are SSR (server-side rendering), and we don't have access to the pathname, since it is on the client side.
+
+
+## 📊 Charts Integration
+
+- Added [`recharts`](https://recharts.org/) for modern, responsive data visualizations.
+- All chart mock data is separated into `/data/charts/`, following best practices for testability and future replacement by API data.
+- All chart components are defined as `"use client"` components to ensure compatibility with Recharts, which only works in React Client Components.
+- Components are isolated for clarity, reusability, and maintainability.
+- This structure demonstrates separation of concerns and a scalable approach, even in small projects.
+
+
