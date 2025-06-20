@@ -1,44 +1,28 @@
 "use client";
 
 import { homeLineChartData } from "@/data/charts/homeLineChartData";
+
+import { Line } from "react-chartjs-2";
 import {
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  LineChart,
-  Line,
-  ResponsiveContainer,
-} from "recharts";
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+} from "chart.js";
 
 export default function HomeLineChart() {
-  return (
-    <ResponsiveContainer width="100%" height={300}>
-      <LineChart
-        width={500}
-        height={300}
-        data={homeLineChartData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
-    </ResponsiveContainer>
-  );
+  ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+      },
+    },
+  };
+
+  return <Line data={homeLineChartData} options={options} />;
 }
