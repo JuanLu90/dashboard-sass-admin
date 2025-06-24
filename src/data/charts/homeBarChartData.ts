@@ -1,13 +1,17 @@
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
 export const homeBarChartData = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+  labels,
   datasets: [
     {
-      label: "Users",
-      data: [100, 250, 190, 300, 240],
-      borderColor: "#3b82f6",
-      backgroundColor: "rgba(59,130,246,0.2)",
-      fill: true,
-      tension: 0.4,
+      label: "Dataset 1",
+      data: [430, 541, 254, 512, 678, 498, 345],
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
+    {
+      label: "Dataset 2",
+      data: [356, 485, 378, 682, 648, 487, 399],
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
   ],
 };

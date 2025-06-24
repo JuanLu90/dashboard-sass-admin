@@ -2,17 +2,26 @@
 
 import { homeBarChartData } from "@/data/charts/homeBarChartData";
 
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
-  LineElement,
+  BarElement,
   CategoryScale,
   LinearScale,
-  PointElement,
+  Title,
+  Legend,
+  Tooltip,
 } from "chart.js";
 
 export default function HomeBarChart() {
-  ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
 
   const options = {
     responsive: true,
@@ -24,5 +33,5 @@ export default function HomeBarChart() {
     },
   };
 
-  return <Line data={homeBarChartData} options={options} />;
+  return <Bar data={homeBarChartData} options={options} />;
 }
