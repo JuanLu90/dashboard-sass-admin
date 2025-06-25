@@ -11,8 +11,9 @@ export default function Sidebar({ open }: SidebarProps) {
   const pathname = usePathname();
 
   const arrayLinks = [
-    { name: "Dashboard", href: "/dashboard" },
     { name: "Users", href: "/users" },
+    { name: "Plans", href: "/plans" },
+    { name: "Support", href: "/support" },
     { name: "Settings", href: "/settings" },
   ];
 
@@ -32,7 +33,7 @@ export default function Sidebar({ open }: SidebarProps) {
             pathname === "/" ? "font-bold" : ""
           }`}
         >
-          Panel
+          Dashboard
         </Link>
       </div>
       <nav className="flex flex-col gap-2">
