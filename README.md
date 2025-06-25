@@ -42,10 +42,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## 📊 Charts Integration
 
-- Added [`recharts`](https://recharts.org/) for modern, responsive data visualizations.
-- All chart mock data is separated into `/data/charts/`, following best practices for testability and future replacement by API data.
-- All chart components are defined as `"use client"` components to ensure compatibility with Recharts, which only works in React Client Components.
-- Components are isolated for clarity, reusability, and maintainability.
-- This structure demonstrates separation of concerns and a scalable approach, even in small projects.
+- Switched from recharts to react-chartjs-2 (Chart.js) for improved performance and smoother UI animations.
+- Chart.js provides more efficient and responsive rendering, especially when animating layouts (like sidebar transitions), which eliminates UI lag present with Recharts in this context.
+- All chart mock data remains separated under /data/charts/, following best practices for testability and future migration to real API data.
+- Chart components are still defined as "use client" components, as required for any interactive chart library in Next.js App Router.
+- Components and data are isolated for clarity, reusability, and maintainability.
+- This structure demonstrates separation of concerns and scalability, reflecting professional standards even in small projects.
 
 
