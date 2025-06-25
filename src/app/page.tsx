@@ -1,9 +1,9 @@
 import HomeLineChart from "@/components/charts/HomeLineChart";
-import HomeBarChart from "@/components/charts/HomeBarChart";
 import HomeDoughnutChart from "@/components/charts/HomeDoughnutChart";
 import { Card, CardContent } from "@/components/ui/card";
 import { Metadata } from "next";
 import { ShoppingCart, DollarSign, Users, CreditCard } from "lucide-react";
+import RecentUsersTable from "@/components/tables/RecentUsersTable";
 
 export const metadata: Metadata = {
   title: "Dashboard Sass Admin",
@@ -88,11 +88,13 @@ export default function Home() {
           <HomeLineChart />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-gray-800 rounded-xl p-2 h-80">
-          <HomeBarChart />
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="bg-gray-800 rounded-xl p-4 col-span-3">
+          <RecentUsersTable />
         </div>
-        <div className="bg-gray-800 rounded-xl p-4 h-80">
+        <div className="bg-gray-800 rounded-xl p-2">
+          <div className="text-md font-medium text-gray-400">Analytics</div>
+
           <HomeDoughnutChart />
         </div>
       </div>
