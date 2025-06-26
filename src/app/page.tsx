@@ -1,10 +1,14 @@
 // import HomeLineChart from "@/components/charts/HomeLineChart";
-import HomeDoughnutChart from "@/components/charts/HomeDoughnutChart";
+// import HomeDoughnutChart from "@/components/charts/HomeDoughnutChart";
 // import { Card, CardContent } from "@/components/ui/card";
 import { Metadata } from "next";
 // import { ShoppingCart, DollarSign, Users, CreditCard } from "lucide-react";
-import RecentUsersTable from "@/components/tables/RecentUsersTable";
+// import RecentUsersTable from "@/components/tables/RecentUsersTable";
 import KpiCardsGrid from "@/components/charts/KpiCardsGrid";
+import ActiveUsersLineChart from "@/components/charts/ActiveUsersLineChart";
+import PlanDistributionDoughnut from "@/components/charts/PlanDistributionDoughnut";
+import RevenueBarChart from "@/components/charts/RevenueBarChart";
+import DashboardTablesGrid from "@/components/charts/DashboardTablesGrid";
 
 export const metadata: Metadata = {
   title: "Dashboard Sass Admin",
@@ -86,11 +90,21 @@ export default function Home() {
           ))}
         </div> */}
         <KpiCardsGrid />
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-3">
+            <ActiveUsersLineChart />
+          </div>
+          <div className="lg:col-span-1">
+            <PlanDistributionDoughnut />
+          </div>
+        </div>
+        <RevenueBarChart />
         {/* <div className="bg-gray-800 rounded-xl p-2">
           <HomeLineChart />
         </div> */}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <DashboardTablesGrid />
+      {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="bg-gray-800 rounded-xl p-4 col-span-3">
           <RecentUsersTable />
         </div>
@@ -99,7 +113,7 @@ export default function Home() {
 
           <HomeDoughnutChart />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

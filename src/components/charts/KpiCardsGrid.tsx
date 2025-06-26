@@ -31,7 +31,7 @@ export default function KpiCardsGrid() {
           >
             <CardContent className="flex justify-between items-center">
               <div>
-                <div className="text-gray-300 font-medium">{kpi.title}</div>
+                <div className="text-gray-300 font-bold mb-4">{kpi.title}</div>
                 <div className="text-3xl font-bold text-white mt-2 flex items-center gap-2">
                   {kpi.prefix}
                   {typeof kpi.value === "number"
