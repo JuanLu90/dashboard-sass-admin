@@ -1,6 +1,6 @@
 // /components/charts/KpiCardsGrid.tsx
 
-import { dashboardKpis } from "@/data/kpis";
+import { dashboardKpis } from "@/data/charts/kpis";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Users,

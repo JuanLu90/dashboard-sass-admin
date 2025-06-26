@@ -1,7 +1,7 @@
 "use client";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { planDistribution } from "@/data/planDistribution";
+import { planDistribution } from "@/data/charts/planDistribution";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 

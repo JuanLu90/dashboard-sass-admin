@@ -3,7 +3,7 @@ import {
   recentUsers,
   recentSubscriptions,
   recentIncidents,
-} from "@/data/dashboardSummaries";
+} from "@/data/charts/dashboardSummaries";
 import Image from "next/image";
 
 const statusColors: Record<string, string> = {

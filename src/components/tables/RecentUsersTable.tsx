@@ -8,7 +8,7 @@ import {
   flexRender,
   ColumnDef,
 } from "@tanstack/react-table";
-import { usersRecentMock } from "@/data/usersRecentMock";
+import { usersRecentMock } from "@/data/charts/usersRecentMock";
 import { MoreVertical } from "lucide-react";
 
 import {
