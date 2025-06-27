@@ -9,7 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { revenuePerMonth } from "@/data/charts/revenuePerMonth";
+import { revenuePerMonth } from "@/data/dashboard/revenuePerMonth";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 

@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { activeUsersPerDay } from "@/data/charts/activeUsersPerDay";
+import { activeUsersPerDay } from "@/data/dashboard/activeUsersPerDay";
 
 ChartJS.register(
   LineElement,
