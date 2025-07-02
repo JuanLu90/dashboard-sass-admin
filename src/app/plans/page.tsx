@@ -3,9 +3,12 @@ import PricingFeatureComparison from "../../components/charts/PricingFeatureComp
 
 export default function PlansPricingPage() {
   return (
-    <div className="p-6 max-w-6xl mx-auto">
-      <PricingCards />
-      <PricingFeatureComparison />
+    <div>
+      <h1 className="text-2xl font-bold text-white">Plans</h1>
+      <div className="p-4 max-w-6xl mx-auto">
+        <PricingCards />
+        <PricingFeatureComparison />
+      </div>
     </div>
   );
 }

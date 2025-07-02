@@ -20,7 +20,7 @@ export default function Sidebar({ open }: SidebarProps) {
   return (
     <aside
       className={`
-        w-64 bg-gray-900 text-white h-full flex flex-col p-4
+        w-64 bg-gray-800 text-white h-full flex flex-col p-4
         fixed z-40 top-0 left-0
         transition-transform duration-300
         ${open ? "translate-x-0" : "-translate-x-full"}

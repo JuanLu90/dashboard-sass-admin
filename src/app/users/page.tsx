@@ -135,7 +135,7 @@ export default function Users() {
   const planOptions = Array.from(new Set(usersMock.map((u) => u.plan)));
 
   return (
-    <div className="max-w-full w-full mx-auto p-4 space-y-6">
+    <div className="max-w-full w-full mx-auto space-y-6">
       <div className="flex flex-col md:flex-row md:items-center gap-4 justify-between">
         <h1 className="text-2xl font-bold text-white">Users</h1>
         <div className="flex gap-2">
