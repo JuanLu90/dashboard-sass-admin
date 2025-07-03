@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import KpiCardsGrid from "@/components/charts/KpiCardsGrid";
-import ActiveUsersLineChart from "@/components/charts/ActiveUsersLineChart";
+import ActiveUsersLineChart from "../components/charts/ActiveUsersLineChart";
 import PlanDistributionDoughnut from "@/components/charts/PlanDistributionDoughnut";
 import RevenueBarChart from "@/components/charts/RevenueBarChart";
 import DashboardTablesGrid from "@/components/charts/DashboardTablesGrid";
