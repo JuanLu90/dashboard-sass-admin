@@ -1,6 +1,5 @@
-// /components/charts/KpiCardsGrid.tsx
+"use client";
 
-import { dashboardKpis } from "@/data/dashboard/kpis";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Users,
@@ -10,6 +9,8 @@ import {
   ArrowUpRight,
   ArrowDownRight,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 const iconMap = {
   users: Users,
@@ -18,10 +19,58 @@ const iconMap = {
   "refresh-cw": RefreshCw,
 };
 
+type DashboardKpisSet = {
+  title: string;
+  value: number;
+  icon: string;
+  change: number;
+  caption: string;
+  prefix?: string;
+  suffix?: string;
+};
+
 export default function KpiCardsGrid() {
+  const [data, setData] = useState<DashboardKpisSet[] | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/mock-cards-kpi")
+      .then((res) => res.json())
+      .then((data: DashboardKpisSet[]) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading || !data) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        {[...Array(4)].map((_, i) => (
+          <Card
+            key={i}
+            className="bg-gray-800 border-none shadow-none flex flex-col justify-between"
+          >
+            <CardContent className="flex justify-between items-center">
+              <div className="flex-1">
+                <Skeleton className="h-4 w-24 mb-4" /> {/* Título */}
+                <Skeleton className="h-10 w-28 mb-4" /> {/* Valor grande */}
+                <div className="flex items-center gap-2 mt-3">
+                  <Skeleton className="h-5 w-16 rounded" /> {/* % cambio */}
+                  <Skeleton className="h-4 w-20" /> {/* Caption */}
+                </div>
+              </div>
+              <div className="bg-gray-700 rounded-full p-3 flex items-center justify-center ml-6">
+                <Skeleton className="w-6 h-6 rounded-full" /> {/* Icono */}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    );
+  }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-      {dashboardKpis.map((kpi) => {
+      {data.map((kpi) => {
         const Icon = iconMap[kpi.icon as keyof typeof iconMap] || Users;
         const isPositive = kpi.change >= 0;
         return (

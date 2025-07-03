@@ -9,35 +9,71 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { revenuePerMonth } from "@/data/dashboard/revenuePerMonth";
+import { useEffect, useState } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-const data = {
-  labels: revenuePerMonth.map((d) => d.month),
-  datasets: [
-    {
-      label: "Revenue",
-      data: revenuePerMonth.map((d) => d.revenue),
-      backgroundColor: "#3b82f6",
-      borderRadius: 8,
-    },
-  ],
+type RevenuePerMonth = {
+  month: string;
+  revenue: number;
 };
 
-const options = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-  },
-  scales: {
-    y: { ticks: { color: "#fff" }, grid: { color: "#334155" } },
-    x: { ticks: { color: "#fff" }, grid: { display: false } },
-  },
+type RevenueBarChartData = {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor: string;
+    borderRadius: number;
+  }[];
 };
 
 export default function RevenueBarChart() {
+  const [data, setData] = useState<RevenueBarChartData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/mock-revenue-per-month") // Cambia al endpoint correcto
+      .then((res) => res.json())
+      .then((data: RevenuePerMonth[]) => {
+        setData({
+          labels: data.map((d) => d.month),
+          datasets: [
+            {
+              label: "Revenue",
+              data: data.map((d) => d.revenue),
+              backgroundColor: "#3b82f6",
+              borderRadius: 8,
+            },
+          ],
+        });
+        setLoading(false);
+      });
+  }, []);
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+    },
+    scales: {
+      y: { ticks: { color: "#fff" }, grid: { color: "#334155" } },
+      x: { ticks: { color: "#fff" }, grid: { display: false } },
+    },
+  };
+
+  if (loading || !data) {
+    return (
+      <div className="bg-gray-800 rounded-xl p-6 h-72 flex flex-col justify-center">
+        <Skeleton className="h-6 w-2/3 mb-6" />
+        <Skeleton className="h-40 w-full" />
+      </div>
+    );
+  }
+
+  console.log(data);
   return (
     <div className="bg-gray-800 rounded-xl p-6 pb-16 h-72 flex flex-col">
       <div className="text-gray-300 font-bold mb-6">Monthly Revenue</div>
