@@ -1,10 +1,9 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  recentUsers,
-  recentSubscriptions,
-  recentIncidents,
-} from "@/data/dashboard/dashboardSummaries";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 const statusColors: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
@@ -20,7 +19,102 @@ const priorityColors: Record<string, string> = {
   Critical: "bg-red-900 text-red-400",
 };
 
+type RevenueBarChartData = {
+  recentUsers: [
+    {
+      id: number;
+      name: string;
+      email: string;
+      signup: string;
+      status: string;
+      plan: string;
+      avatar: string;
+    }
+  ];
+  recentSubscriptions: [
+    {
+      id: number;
+      user: string;
+      plan: string;
+      startDate: string;
+      status: string;
+      avatar: string;
+    }
+  ];
+  recentIncidents: [
+    {
+      id: number;
+      user: string;
+      subject: string;
+      status: string;
+      priority: string;
+      avatar: string;
+    }
+  ];
+};
+
 export default function DashboardTablesGrid() {
+  const [data, setData] = useState<RevenueBarChartData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/mock-recent-grid")
+      .then((res) => res.json())
+      .then((data: RevenueBarChartData) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading || !data) {
+    const rowCount = 3;
+    const headerCount = 3;
+
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[0, 1, 2].map((cardIdx) => (
+          <Card key={cardIdx} className="bg-gray-800 border-none shadow-none">
+            <CardContent className="px-6">
+              <Skeleton className="h-6 w-40 mb-4" /> {/* Título */}
+              <table className="w-full text-sm">
+                <thead>
+                  <tr>
+                    {[...Array(headerCount)].map((_, thIdx) => (
+                      <th
+                        key={thIdx}
+                        className="text-left font-normal text-gray-400 pb-1"
+                      >
+                        <Skeleton className="h-4 w-16" />
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[...Array(rowCount)].map((_, rowIdx) => (
+                    <tr key={rowIdx}>
+                      <td className="py-1">
+                        <div className="flex items-center gap-2">
+                          <Skeleton className="w-[30px] h-[30px] rounded-full border border-gray-700" />
+                          <Skeleton className="h-4 w-20" />
+                        </div>
+                      </td>
+                      <td className="py-1">
+                        <Skeleton className="h-4 w-16" />
+                      </td>
+                      <td className="py-1">
+                        <Skeleton className="h-5 w-14 rounded" />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <Card className="bg-gray-800 border-none shadow-none">
@@ -41,7 +135,7 @@ export default function DashboardTablesGrid() {
               </tr>
             </thead>
             <tbody>
-              {recentUsers.map((u) => (
+              {data?.recentUsers.map((u) => (
                 <tr key={u.id}>
                   <td className="py-1 text-white">
                     <div className="flex items-center gap-2">
@@ -92,7 +186,7 @@ export default function DashboardTablesGrid() {
               </tr>
             </thead>
             <tbody>
-              {recentSubscriptions.map((s) => (
+              {data?.recentSubscriptions.map((s) => (
                 <tr key={s.id}>
                   <td className="py-1 text-white">
                     <div className="flex items-center gap-2">
@@ -140,7 +234,7 @@ export default function DashboardTablesGrid() {
               </tr>
             </thead>
             <tbody>
-              {recentIncidents.map((i) => (
+              {data?.recentIncidents.map((i) => (
                 <tr key={i.id}>
                   <td className="py-1 text-white">
                     <div className="flex items-center gap-2">

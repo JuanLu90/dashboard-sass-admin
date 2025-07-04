@@ -52,15 +52,15 @@ export default function KpiCardsGrid() {
           >
             <CardContent className="flex justify-between items-center">
               <div className="flex-1">
-                <Skeleton className="h-4 w-24 mb-4" /> {/* Título */}
-                <Skeleton className="h-10 w-28 mb-4" /> {/* Valor grande */}
+                <Skeleton className="h-4 w-24 mb-4" />
+                <Skeleton className="h-10 w-28 mb-4" />
                 <div className="flex items-center gap-2 mt-3">
-                  <Skeleton className="h-5 w-16 rounded" /> {/* % cambio */}
-                  <Skeleton className="h-4 w-20" /> {/* Caption */}
+                  <Skeleton className="h-5 w-16 rounded" />
+                  <Skeleton className="h-4 w-20" />
                 </div>
               </div>
               <div className="bg-gray-700 rounded-full p-3 flex items-center justify-center ml-6">
-                <Skeleton className="w-6 h-6 rounded-full" /> {/* Icono */}
+                <Skeleton className="w-6 h-6 rounded-full" />
               </div>
             </CardContent>
           </Card>
@@ -68,6 +68,7 @@ export default function KpiCardsGrid() {
       </div>
     );
   }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
       {data.map((kpi) => {
