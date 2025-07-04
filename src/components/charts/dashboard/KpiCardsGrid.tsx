@@ -11,22 +11,13 @@ import {
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import KpiCardsGridSkeleton from "./KpiCardsGridSkeleton";
+import { DashboardKpisSet } from "@/types/dashboard";
 
 const iconMap = {
   users: Users,
   "plus-circle": PlusCircle,
   "dollar-sign": DollarSign,
   "refresh-cw": RefreshCw,
-};
-
-type DashboardKpisSet = {
-  title: string;
-  value: number;
-  icon: string;
-  change: number;
-  caption: string;
-  prefix?: string;
-  suffix?: string;
 };
 
 export default function KpiCardsGrid() {

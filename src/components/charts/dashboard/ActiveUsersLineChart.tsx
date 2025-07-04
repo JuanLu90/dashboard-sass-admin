@@ -12,6 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import ActiveUsersLineChartSkeleton from "./ActiveUsersLineChartSkeleton";
+import { ActiveUserDay, LineChartData } from "@/types/dashboard";
 
 ChartJS.register(
   LineElement,
@@ -21,23 +22,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-type ActiveUserDay = {
-  date: string;
-  users: number;
-};
-
-type LineChartData = {
-  labels: string[];
-  datasets: {
-    label: string;
-    data: number[];
-    borderColor: string;
-    backgroundColor: string;
-    fill: boolean;
-    tension: number;
-  }[];
-};
 
 export default function ActiveUsersLineChartCSR() {
   const [data, setData] = useState<LineChartData | null>(null);

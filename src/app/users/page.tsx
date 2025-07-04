@@ -30,14 +30,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { MoreVertical } from "lucide-react";
 import Image from "next/image";
+import { User } from "@/types/users";
 
 const statusColor: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
   Inactive: "bg-red-900 text-red-400",
   Pending: "bg-yellow-900 text-yellow-400",
 };
-
-type User = (typeof usersMock)[number];
 
 const columns: ColumnDef<User>[] = [
   {

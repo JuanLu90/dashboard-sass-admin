@@ -1,10 +1,6 @@
+import { HeaderProps } from "@/types/header";
 import { Menu } from "lucide-react";
 import Image from "next/image";
-
-type HeaderProps = {
-  toggleSidebar: () => void;
-  sidebarOpen: boolean;
-};
 
 export default function Header({ toggleSidebar, sidebarOpen }: HeaderProps) {
   return (

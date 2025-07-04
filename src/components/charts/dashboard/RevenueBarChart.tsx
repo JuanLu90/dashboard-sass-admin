@@ -11,23 +11,9 @@ import {
 } from "chart.js";
 import { useEffect, useState } from "react";
 import RevenueBarChartSkeleton from "./RevenueBarChartSkeleton";
+import { RevenueBarChartData, RevenuePerMonth } from "@/types/dashboard";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
-
-type RevenuePerMonth = {
-  month: string;
-  revenue: number;
-};
-
-type RevenueBarChartData = {
-  labels: string[];
-  datasets: {
-    label: string;
-    data: number[];
-    backgroundColor: string;
-    borderRadius: number;
-  }[];
-};
 
 export default function RevenueBarChart() {
   const [data, setData] = useState<RevenueBarChartData | null>(null);

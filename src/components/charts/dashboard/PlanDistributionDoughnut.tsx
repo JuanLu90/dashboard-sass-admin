@@ -4,6 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useEffect, useState } from "react";
 import PlanDistributionDoughnutSkeleton from "./PlanDistributionDoughnutSkeleton";
+import { PlansDistributionChartData } from "@/types/dashboard";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -12,17 +13,6 @@ const options = {
   plugins: {
     legend: { labels: { color: "#fff" } },
   },
-};
-
-type PlansDistributionDataset = {
-  data: number[];
-  backgroundColor: string[];
-  borderWidth: number;
-};
-
-type PlansDistributionChartData = {
-  labels: string[];
-  datasets: PlansDistributionDataset[];
 };
 
 export default function PlanDistributionDoughnut() {

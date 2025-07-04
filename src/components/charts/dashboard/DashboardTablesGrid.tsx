@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import DashboardTablesGridSkeleton from "./DashboardTablesGridSkeleton";
+import { DashboardTableGrid } from "@/types/dashboard";
 
 const statusColors: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
@@ -19,48 +20,14 @@ const priorityColors: Record<string, string> = {
   Critical: "bg-red-900 text-red-400",
 };
 
-type RevenueBarChartData = {
-  recentUsers: [
-    {
-      id: number;
-      name: string;
-      email: string;
-      signup: string;
-      status: string;
-      plan: string;
-      avatar: string;
-    }
-  ];
-  recentSubscriptions: [
-    {
-      id: number;
-      user: string;
-      plan: string;
-      startDate: string;
-      status: string;
-      avatar: string;
-    }
-  ];
-  recentIncidents: [
-    {
-      id: number;
-      user: string;
-      subject: string;
-      status: string;
-      priority: string;
-      avatar: string;
-    }
-  ];
-};
-
 export default function DashboardTablesGrid() {
-  const [data, setData] = useState<RevenueBarChartData | null>(null);
+  const [data, setData] = useState<DashboardTableGrid | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/mock-recent-grid")
       .then((res) => res.json())
-      .then((data: RevenueBarChartData) => {
+      .then((data: DashboardTableGrid) => {
         setData(data);
         setLoading(false);
       });
