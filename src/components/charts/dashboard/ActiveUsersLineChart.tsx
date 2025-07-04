@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Skeleton } from "@/components/ui/skeleton";
+import ActiveUsersLineChartSkeleton from "./ActiveUsersLineChartSkeleton";
 
 ChartJS.register(
   LineElement,
@@ -76,14 +76,7 @@ export default function ActiveUsersLineChartCSR() {
     },
   };
 
-  if (loading || !data) {
-    return (
-      <div className="bg-gray-800 rounded-xl p-6 h-72 flex flex-col justify-center">
-        <Skeleton className="h-6 w-2/3 mb-6" />
-        <Skeleton className="h-40 w-full" />
-      </div>
-    );
-  }
+  if (loading || !data) return <ActiveUsersLineChartSkeleton />;
 
   return (
     <div className="bg-gray-800 rounded-xl p-6 pb-18 h-72">
