@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { useEffect, useState } from "react";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "../../ui/skeleton";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -34,7 +34,7 @@ export default function RevenueBarChart() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/mock-revenue-per-month") // Cambia al endpoint correcto
+    fetch("/api/mock-revenue-per-month")
       .then((res) => res.json())
       .then((data: RevenuePerMonth[]) => {
         setData({

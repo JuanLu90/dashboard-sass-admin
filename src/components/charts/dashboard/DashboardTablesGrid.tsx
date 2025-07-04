@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "../../ui/skeleton";
 
 const statusColors: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
@@ -75,7 +75,7 @@ export default function DashboardTablesGrid() {
         {[0, 1, 2].map((cardIdx) => (
           <Card key={cardIdx} className="bg-gray-800 border-none shadow-none">
             <CardContent className="px-6">
-              <Skeleton className="h-6 w-40 mb-4" /> {/* Título */}
+              <Skeleton className="h-6 w-40 mb-4" />
               <table className="w-full text-sm">
                 <thead>
                   <tr>

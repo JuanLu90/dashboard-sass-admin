@@ -1,5 +1,5 @@
-import PricingCards from "../../components/charts/PricingCards";
-import PricingFeatureComparison from "../../components/charts/PricingFeatureComparison";
+import PricingCards from "../../components/charts/plans/PricingCards";
+import PricingFeatureComparison from "../../components/charts/plans/PricingFeatureComparison";
 
 export default function PlansPricingPage() {
   return (

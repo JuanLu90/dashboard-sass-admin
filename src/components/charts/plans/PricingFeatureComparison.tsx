@@ -1,4 +1,7 @@
-import { plansPricing, featureList } from "../../data/plans/plansPricing";
+import {
+  plansPricing,
+  featureList,
+} from "../../../data/plans/plansPricingMock";
 import { Check, X } from "lucide-react";
 
 export default function PricingFeatureComparison() {

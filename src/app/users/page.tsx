@@ -1,5 +1,3 @@
-// /app/usuarios/page.tsx (o como lo tengas)
-
 "use client";
 
 import * as React from "react";

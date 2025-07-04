@@ -1,4 +1,4 @@
-import { plansPricing } from "../../data/plans/plansPricing";
+import { plansPricing } from "../../../data/plans/plansPricingMock";
 import { Button } from "@/components/ui/button";
 import { Medal, Award, Trophy } from "lucide-react";
 

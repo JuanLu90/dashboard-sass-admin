@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import KpiCardsGrid from "@/components/charts/KpiCardsGrid";
-import ActiveUsersLineChart from "../components/charts/ActiveUsersLineChart";
-import PlanDistributionDoughnut from "@/components/charts/PlanDistributionDoughnut";
-import RevenueBarChart from "@/components/charts/RevenueBarChart";
-import DashboardTablesGrid from "@/components/charts/DashboardTablesGrid";
+import KpiCardsGrid from "@/components/charts/dashboard/KpiCardsGrid";
+import ActiveUsersLineChart from "@/components/charts/dashboard/ActiveUsersLineChart";
+import PlanDistributionDoughnut from "@/components/charts/dashboard/PlanDistributionDoughnut";
+import RevenueBarChart from "@/components/charts/dashboard/RevenueBarChart";
+import DashboardTablesGrid from "@/components/charts/dashboard/DashboardTablesGrid";
 
 export const metadata: Metadata = {
   title: "Dashboard Sass Admin",
