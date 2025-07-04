@@ -16,7 +16,6 @@ export default function Header({ toggleSidebar, sidebarOpen }: HeaderProps) {
       >
         <Menu size={32} />
       </button>
-      <span className="font-semibold">Dashboard SaaS</span>
       <Image
         src="https://ui-avatars.com/api/?name=Juan+Luis&format=png"
         alt="Juan Luis"
