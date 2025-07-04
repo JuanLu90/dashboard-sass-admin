@@ -12,6 +12,7 @@ import {
 import { useEffect, useState } from "react";
 import RevenueBarChartSkeleton from "./RevenueBarChartSkeleton";
 import { RevenueBarChartData, RevenuePerMonth } from "@/types/dashboard";
+import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -29,7 +30,7 @@ export default function RevenueBarChart() {
             {
               label: "Revenue",
               data: data.map((d) => d.revenue),
-              backgroundColor: "#3b82f6",
+              backgroundColor: COLOR_BLUE_500,
               borderRadius: 8,
             },
           ],
@@ -45,8 +46,8 @@ export default function RevenueBarChart() {
       legend: { display: false },
     },
     scales: {
-      y: { ticks: { color: "#fff" }, grid: { color: "#334155" } },
-      x: { ticks: { color: "#fff" }, grid: { display: false } },
+      y: { ticks: { color: COLOR_WHITE }, grid: { color: COLOR_GRAY_700 } },
+      x: { ticks: { color: COLOR_WHITE }, grid: { display: false } },
     },
   };
 

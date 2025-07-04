@@ -5,13 +5,14 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useEffect, useState } from "react";
 import PlanDistributionDoughnutSkeleton from "./PlanDistributionDoughnutSkeleton";
 import { PlansDistributionChartData } from "@/types/dashboard";
+import { COLOR_WHITE } from "@/lib/colors";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const options = {
   responsive: true,
   plugins: {
-    legend: { labels: { color: "#fff" } },
+    legend: { labels: { color: COLOR_WHITE } },
   },
 };
 

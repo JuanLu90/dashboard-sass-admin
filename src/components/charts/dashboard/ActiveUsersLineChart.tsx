@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import ActiveUsersLineChartSkeleton from "./ActiveUsersLineChartSkeleton";
 import { ActiveUserDay, LineChartData } from "@/types/dashboard";
+import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
 
 ChartJS.register(
   LineElement,
@@ -37,8 +38,8 @@ export default function ActiveUsersLineChartCSR() {
             {
               label: "Active Users",
               data: days.map((d) => d.users),
-              borderColor: "#3b82f6",
-              backgroundColor: "rgba(59, 130, 246, 0.2)",
+              borderColor: COLOR_BLUE_500,
+              backgroundColor: COLOR_BLUE_500,
               fill: true,
               tension: 0.4,
             },
@@ -55,8 +56,8 @@ export default function ActiveUsersLineChartCSR() {
       legend: { display: false },
     },
     scales: {
-      y: { ticks: { color: "#fff" }, grid: { color: "#334155" } },
-      x: { ticks: { color: "#fff" }, grid: { display: false } },
+      y: { ticks: { color: COLOR_WHITE }, grid: { color: COLOR_GRAY_700 } },
+      x: { ticks: { color: COLOR_WHITE }, grid: { display: false } },
     },
   };
 
