@@ -1,4 +1,4 @@
-import randomDelay from "@/app/utils/randomDelay";
+import { randomDelay } from "@/lib/utils";
 
 export async function GET() {
   await new Promise((r) => setTimeout(r, randomDelay()));
