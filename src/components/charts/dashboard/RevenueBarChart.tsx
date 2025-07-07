@@ -54,9 +54,11 @@ export default function RevenueBarChart() {
   if (loading || !data) return <RevenueBarChartSkeleton />;
 
   return (
-    <div className="bg-gray-800 rounded-xl p-6 pb-16 h-72 flex flex-col">
+    <div className="bg-gray-800 rounded-xl p-6 pb-16 h-72 flex flex-col w-full min-w-0">
       <div className="text-gray-300 font-bold mb-6">Monthly Revenue</div>
-      <Bar data={data} options={options} />
+      <div className="relative w-full h-full min-w-0 flex-1">
+        <Bar data={data} options={options} />
+      </div>
     </div>
   );
 }

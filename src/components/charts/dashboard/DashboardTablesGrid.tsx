@@ -36,7 +36,7 @@ export default function DashboardTablesGrid() {
   if (loading || !data) return <DashboardTablesGridSkeleton />;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       <Card className="bg-gray-800 border-none shadow-none">
         <CardContent className="px-6">
           <div className="text-gray-300 font-bold mb-4">Recent Users</div>
