@@ -25,7 +25,7 @@ export type DashboardTableGrid = {
       status: string;
       plan: string;
       avatar: string;
-    }
+    },
   ];
   recentSubscriptions: [
     {
@@ -35,7 +35,7 @@ export type DashboardTableGrid = {
       startDate: string;
       status: string;
       avatar: string;
-    }
+    },
   ];
   recentIncidents: [
     {
@@ -45,7 +45,7 @@ export type DashboardTableGrid = {
       status: string;
       priority: string;
       avatar: string;
-    }
+    },
   ];
 };
 

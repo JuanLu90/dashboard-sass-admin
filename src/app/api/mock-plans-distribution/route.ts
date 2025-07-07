@@ -1,9 +1,4 @@
-import {
-  COLOR_BLUE_500,
-  COLOR_CYAN_500,
-  COLOR_INDIGO_500,
-  COLOR_PURPLE_800,
-} from "@/lib/colors";
+import { COLOR_BLUE_500, COLOR_CYAN_500, COLOR_INDIGO_500, COLOR_PURPLE_800 } from "@/lib/colors";
 import { randomDelay } from "@/lib/utils";
 
 export async function GET() {
@@ -21,12 +16,7 @@ export async function GET() {
     datasets: [
       {
         data: plansDistribution.map((d) => d.count),
-        backgroundColor: [
-          COLOR_BLUE_500,
-          COLOR_INDIGO_500,
-          COLOR_CYAN_500,
-          COLOR_PURPLE_800,
-        ],
+        backgroundColor: [COLOR_BLUE_500, COLOR_INDIGO_500, COLOR_CYAN_500, COLOR_PURPLE_800],
         borderWidth: 0,
       },
     ],

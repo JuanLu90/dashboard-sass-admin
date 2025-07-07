@@ -15,14 +15,7 @@ import ActiveUsersLineChartSkeleton from "./ActiveUsersLineChartSkeleton";
 import { ActiveUserDay, LineChartData } from "@/types/dashboard";
 import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
 
-ChartJS.register(
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Tooltip,
-  Legend
-);
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
 export default function ActiveUsersLineChartCSR() {
   const [data, setData] = useState<LineChartData | null>(null);
@@ -65,9 +58,7 @@ export default function ActiveUsersLineChartCSR() {
 
   return (
     <div className="bg-gray-800 rounded-xl p-6 pb-18 h-72">
-      <div className="text-gray-300 font-bold mb-8">
-        Active Users (last 30 days)
-      </div>
+      <div className="text-gray-300 font-bold mb-8">Active Users (last 30 days)</div>
       <Line data={data} options={options} />
     </div>
   );

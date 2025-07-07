@@ -12,10 +12,13 @@ import { usersMock } from "@/data/users/usersMock";
 import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
 
 const planStats = Object.entries(
-  usersMock.reduce((acc, user) => {
-    acc[user.plan] = (acc[user.plan] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>)
+  usersMock.reduce(
+    (acc, user) => {
+      acc[user.plan] = (acc[user.plan] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  ),
 );
 
 const data = {
@@ -45,9 +48,7 @@ export default function UsersByPlanBar() {
 
   return (
     <div className="bg-gray-800 rounded-xl p-4 h-64">
-      <div className="text-sm font-medium text-gray-400 mb-2">
-        Users by Plan
-      </div>
+      <div className="text-sm font-medium text-gray-400 mb-2">Users by Plan</div>
       <Bar data={data} options={options} />
     </div>
   );

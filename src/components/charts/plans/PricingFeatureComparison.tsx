@@ -1,7 +1,4 @@
-import {
-  plansPricing,
-  featureList,
-} from "../../../data/plans/plansPricingMock";
+import { plansPricing, featureList } from "../../../data/plans/plansPricingMock";
 import { Check, X } from "lucide-react";
 
 export default function PricingFeatureComparison() {
@@ -12,10 +9,7 @@ export default function PricingFeatureComparison() {
           <tr>
             <th className="px-4 py-3 font-semibold text-gray-300">Features</th>
             {plansPricing.map((plan) => (
-              <th
-                key={plan.name}
-                className="px-4 py-3 font-semibold text-gray-300"
-              >
+              <th key={plan.name} className="px-4 py-3 font-semibold text-gray-300">
                 {plan.name}
               </th>
             ))}
@@ -23,10 +17,7 @@ export default function PricingFeatureComparison() {
         </thead>
         <tbody>
           {featureList.map((feature) => (
-            <tr
-              key={feature}
-              className="border-t border-gray-700 last:border-b"
-            >
+            <tr key={feature} className="border-t border-gray-700 last:border-b">
               <td className="px-4 py-2 font-medium text-gray-400">{feature}</td>
               {plansPricing.map((plan) => (
                 <td key={plan.name} className="px-4 py-2 text-center">

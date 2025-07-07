@@ -15,10 +15,7 @@ export default function DashboardTablesGridSkeleton() {
               <thead>
                 <tr>
                   {[...Array(headerCount)].map((_, thIdx) => (
-                    <th
-                      key={thIdx}
-                      className="text-left font-normal text-gray-400 pb-1"
-                    >
+                    <th key={thIdx} className="text-left font-normal text-gray-400 pb-1">
                       <Skeleton className="h-4 w-16" />
                     </th>
                   ))}

@@ -50,19 +50,13 @@ export default function KpiCardsGrid() {
                 <div className="text-gray-300 font-bold mb-4">{kpi.title}</div>
                 <div className="text-3xl font-bold text-white mt-2 flex items-center gap-2">
                   {kpi.prefix}
-                  {typeof kpi.value === "number"
-                    ? kpi.value.toLocaleString()
-                    : kpi.value}
+                  {typeof kpi.value === "number" ? kpi.value.toLocaleString() : kpi.value}
                   {kpi.suffix}
                 </div>
                 <div className="flex items-center gap-2 mt-3">
                   <span
                     className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
-                      ${
-                        isPositive
-                          ? "bg-green-900 text-green-400"
-                          : "bg-red-900 text-red-400"
-                      }`}
+                      ${isPositive ? "bg-green-900 text-green-400" : "bg-red-900 text-red-400"}`}
                   >
                     {isPositive ? (
                       <ArrowUpRight size={14} className="mr-1" />

@@ -35,10 +35,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
 ## Implementation Notes
-- The sidebar navigation uses the Next.js <Link> component instead of <a> to enable client-side routing and preserve React state. To do this, we had to add 'use client' to the Sidebar.tsx component. This is because, by default, all components are SSR (server-side rendering), and we don't have access to the pathname, since it is on the client side.
 
+- The sidebar navigation uses the Next.js <Link> component instead of <a> to enable client-side routing and preserve React state. To do this, we had to add 'use client' to the Sidebar.tsx component. This is because, by default, all components are SSR (server-side rendering), and we don't have access to the pathname, since it is on the client side.
 
 ## 📊 Charts Integration
 
@@ -48,5 +47,3 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Chart components are still defined as "use client" components, as required for any interactive chart library in Next.js App Router.
 - Components and data are isolated for clarity, reusability, and maintainability.
 - This structure demonstrates separation of concerns and scalability, reflecting professional standards even in small projects.
-
-

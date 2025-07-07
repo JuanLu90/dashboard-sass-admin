@@ -43,15 +43,9 @@ export default function DashboardTablesGrid() {
           <table className="w-full text-sm">
             <thead>
               <tr>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Name
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Plan
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Status
-                </th>
+                <th className="text-left font-normal text-gray-400 pb-1">Name</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Plan</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -88,21 +82,13 @@ export default function DashboardTablesGrid() {
       </Card>
       <Card className="bg-gray-800 border-none shadow-none">
         <CardContent className="px-6">
-          <div className="text-gray-300 font-bold mb-4">
-            Recent Subscriptions
-          </div>
+          <div className="text-gray-300 font-bold mb-4">Recent Subscriptions</div>
           <table className="w-full text-sm">
             <thead>
               <tr>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  User
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Plan
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Status
-                </th>
+                <th className="text-left font-normal text-gray-400 pb-1">User</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Plan</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -142,15 +128,9 @@ export default function DashboardTablesGrid() {
           <table className="w-full text-sm">
             <thead>
               <tr>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  User
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Subject
-                </th>
-                <th className="text-left font-normal text-gray-400 pb-1">
-                  Priority
-                </th>
+                <th className="text-left font-normal text-gray-400 pb-1">User</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Subject</th>
+                <th className="text-left font-normal text-gray-400 pb-1">Priority</th>
               </tr>
             </thead>
             <tbody>
@@ -172,8 +152,7 @@ export default function DashboardTablesGrid() {
                   <td className="py-1">
                     <span
                       className={`px-2 py-0.5 rounded text-xs font-semibold ${
-                        priorityColors[i.priority] ||
-                        "bg-gray-700 text-gray-200"
+                        priorityColors[i.priority] || "bg-gray-700 text-gray-200"
                       }`}
                     >
                       {i.priority}

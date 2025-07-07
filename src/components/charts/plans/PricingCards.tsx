@@ -18,14 +18,10 @@ export default function PricingCards() {
         >
           {icons[plan.name as keyof typeof icons]}
           <h3 className="text-2xl font-bold text-white mb-1">{plan.name}</h3>
-          <div className="text-gray-400 mb-4 text-center">
-            {plan.description}
-          </div>
+          <div className="text-gray-400 mb-4 text-center">{plan.description}</div>
           <div className="text-3xl font-bold mb-2 text-white">
             ${plan.price}
-            <span className="text-base font-normal text-gray-400">
-              /{plan.period}
-            </span>
+            <span className="text-base font-normal text-gray-400">/{plan.period}</span>
           </div>
           <div className="text-gray-400 mb-6">
             {plan.users} User{plan.users > 1 ? "s" : ""}, Billed Yearly

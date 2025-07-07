@@ -5,10 +5,7 @@ export default function KpiCardsGridSkeleton() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
       {[...Array(4)].map((_, i) => (
-        <Card
-          key={i}
-          className="bg-gray-800 border-none shadow-none flex flex-col justify-between"
-        >
+        <Card key={i} className="bg-gray-800 border-none shadow-none flex flex-col justify-between">
           <CardContent className="flex justify-between items-center">
             <div className="flex-1">
               <Skeleton className="h-4 w-24 mb-4" />
