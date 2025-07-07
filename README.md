@@ -1,49 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard SaaS Admin
 
-## Getting Started
+A modern admin dashboard template focused on **best practices, modular architecture, and realistic UI/UX**, ideal for portfolios, technical interviews, and SaaS prototypes.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+- **Framework:** Next.js (App Router, TypeScript)
+- **UI:** TailwindCSS, [shadcn/ui](https://ui.shadcn.com/), [lucide-react](https://lucide.dev/)
+- **Charts:** [react-chartjs-2](https://react-chartjs-2.js.org/) (Chart.js)
+- **Tables:** [TanStack Table](https://tanstack.com/table/v8) (Users view)
+- **Mock Data:** API routes with simulated latency (CSR/SSR)
+- **Tooling:** ESLint (Flat Config), Prettier, EditorConfig
+
+---
+
+## 📂 Folder Structure
+
+```plaintext
+dashboard-saas-admin/
+├── .vscode/
+│   └── settings.json           # VSCode workspace config
+├── public/                     # Static files, icons, images
+├── src/
+│   ├── app/                    # Next.js pages and routing (App Router)
+│   │   ├── api/                # Mock API endpoints for data fetching
+│   │   ├── plans/              # Plans view
+│   │   ├── users/              # Users view
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx            # Main dashboard page
+│   ├── components/
+│   │   ├── charts/             # All chart components and skeletons
+│   │   │   ├── dashboard/
+│   │   │   ├── plans/
+│   │   │   ├── users/
+│   │   ├── layout/             # Header, Sidebar, layout components
+│   │   ├── ui/                 # UI primitives (card, table, badge, skeleton, etc.)
+│   ├── data/                   # Local mock data, split by domain
+│   ├── lib/                    # Helpers, utilities, constants (colors, delays, etc.)
+│   ├── types/                  # TypeScript types and interfaces (by domain)
+├── .editorconfig
+├── .gitignore
+├── .prettierrc
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 Principles & Best Practices
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modular and scalable architecture: Clear domain-based separation (charts, data, types, layouts…).
+- Charts & Tables:
+  - All charts use CSR (Client Side Rendering) with fetch to mock API endpoints and custom skeleton loaders.
+  - Each skeleton is isolated in its own file and rendered only when loading or when data is unavailable.
+  - Chart colors and config are centralized in `/lib/colors.ts` for visual consistency.
 
-## Learn More
+- User Table:
+  - Advanced paginated table, user avatars, status badges, action dropdowns, etc.
+  - Mock data decoupled from UI; can be easily swapped for real API calls.
 
-To learn more about Next.js, take a look at the following resources:
+- Realistic latency simulation:
+  - Mock endpoints use randomized timeouts (randomDelay) to mimic microservices and independent widget loading.
+  - Each chart/table loads and appears asynchronously for realistic SaaS UX.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Strong TypeScript types:
+  - All major interfaces and types live in /types.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Decoupled skeletons and loading states:
+  - Each loading component is separated from its main component for easy testing and reusability.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🖥️ UI/UX
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Default dark mode.
+- Sidebar: Fixed, responsive, with icons (lucide-react).
+- Header: Minimalist, with avatar and sidebar toggle.
+- Clean interactions and immediate visual feedback.
 
-## Implementation Notes
+---
 
-- The sidebar navigation uses the Next.js <Link> component instead of <a> to enable client-side routing and preserve React state. To do this, we had to add 'use client' to the Sidebar.tsx component. This is because, by default, all components are SSR (server-side rendering), and we don't have access to the pathname, since it is on the client side.
+🛠️ Code Quality
 
-## 📊 Charts Integration
+- Linting: ESLint Flat Config (Next.js + TypeScript presets).
+- Formatting: Prettier (auto-format on save via VSCode).
+- Folder and type conventions.
+- Commit convention: Use semantic, atomic commits (feat:, fix:, refactor:, chore:, etc.).
 
-- Switched from recharts to react-chartjs-2 (Chart.js) for improved performance and smoother UI animations.
-- Chart.js provides more efficient and responsive rendering, especially when animating layouts (like sidebar transitions), which eliminates UI lag present with Recharts in this context.
-- All chart mock data remains separated under /data/charts/, following best practices for testability and future migration to real API data.
-- Chart components are still defined as "use client" components, as required for any interactive chart library in Next.js App Router.
-- Components and data are isolated for clarity, reusability, and maintainability.
-- This structure demonstrates separation of concerns and scalability, reflecting professional standards even in small projects.
+---
+
+📈 Features Included
+
+- KPI Cards: Metric cards with icons and percentage change.
+
+- Charts:
+  - Line chart (active users, last 30 days)
+  - Doughnut chart (plans distribution)
+  - Bar chart (monthly revenue)
+
+- Tables:
+  - Recent users, subscriptions, incidents. Includes avatars, status badges.
+  - Mock API: All dashboard data fetched from mocked endpoints with randomized delays.
+  - Custom skeleton loaders for each chart/table.
+  - Architecture ready for SSR/ISR or backend integration.
+ 
+---
+ 
+⚙️ Local Setup & Development
+```
+git clone https://github.com/YOUR_USERNAME/dashboard-saas-admin.git
+npm install
+npm run dev
+```
+
+And go to http://localhost:3000
+
+
+
