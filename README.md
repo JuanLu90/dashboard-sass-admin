@@ -45,6 +45,8 @@ dashboard-saas-admin/
 ├── .gitignore
 ├── .prettierrc
 ├── eslint.config.mjs
+├── jest.config.ts
+├── jest.setup.js
 ├── next-env.d.ts
 ├── next.config.ts
 ├── package.json
@@ -112,6 +114,14 @@ Modular and scalable architecture: Clear domain-based separation (charts, data, 
   - Custom skeleton loaders for each chart/table.
   - Architecture ready for SSR/ISR or backend integration.
  
+---
+
+## 🧪 Testing and Mock Data
+
+- All mock data used for dashboards, charts, and tables is centralized in the `/src/data` directory.
+- API routes and tests both import their data from these mock files, ensuring consistency and maintainability.
+- This approach avoids data duplication and keeps both the application and the tests in sync.
+
 ---
  
 ⚙️ Local Setup & Development
