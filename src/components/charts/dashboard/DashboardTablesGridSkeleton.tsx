@@ -6,7 +6,7 @@ export default function DashboardTablesGridSkeleton() {
   const headerCount = 3;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-testid="dashboard-tables-skeleton">
       {[0, 1, 2].map((cardIdx) => (
         <Card key={cardIdx} className="bg-gray-800 border-none shadow-none">
           <CardContent className="px-6">
