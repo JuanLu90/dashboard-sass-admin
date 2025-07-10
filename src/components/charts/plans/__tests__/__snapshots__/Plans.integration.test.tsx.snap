@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PricingCards match snapshot 1`] = `
+<div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
+  >
+    <div
+      class="bg-gray-900 rounded-xl shadow-md border border-gray-700 flex flex-col items-center p-8"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-award text-indigo-500 mb-4"
+        fill="none"
+        height="48"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+        />
+        <circle
+          cx="12"
+          cy="8"
+          r="6"
+        />
+      </svg>
+      <h3
+        class="text-2xl font-bold text-white mb-1"
+      >
+        Starter
+      </h3>
+      <div
+        class="text-gray-400 mb-4 text-center"
+      >
+        If you are a small business, please select this plan
+      </div>
+      <div
+        class="text-3xl font-bold mb-2 text-white"
+      >
+        $
+        99
+        <span
+          class="text-base font-normal text-gray-400"
+        >
+          /
+          yr
+        </span>
+      </div>
+      <div
+        class="text-gray-400 mb-6"
+      >
+        1
+         User
+        , Billed Yearly
+      </div>
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-9 px-4 py-2 has-[>svg]:px-3 w-full mt-auto bg-indigo-600 text-white hover:bg-indigo-700"
+        data-slot="button"
+      >
+        Select Plan
+      </button>
+    </div>
+    <div
+      class="bg-gray-900 rounded-xl shadow-md border border-gray-700 flex flex-col items-center p-8"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-medal text-indigo-500 mb-4"
+        fill="none"
+        height="48"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"
+        />
+        <path
+          d="M11 12 5.12 2.2"
+        />
+        <path
+          d="m13 12 5.88-9.8"
+        />
+        <path
+          d="M8 7h8"
+        />
+        <circle
+          cx="12"
+          cy="17"
+          r="5"
+        />
+        <path
+          d="M12 18v-2h-.5"
+        />
+      </svg>
+      <h3
+        class="text-2xl font-bold text-white mb-1"
+      >
+        Pro
+      </h3>
+      <div
+        class="text-gray-400 mb-4 text-center"
+      >
+        If you are a small business, please select this plan
+      </div>
+      <div
+        class="text-3xl font-bold mb-2 text-white"
+      >
+        $
+        299
+        <span
+          class="text-base font-normal text-gray-400"
+        >
+          /
+          yr
+        </span>
+      </div>
+      <div
+        class="text-gray-400 mb-6"
+      >
+        5
+         User
+        s
+        , Billed Yearly
+      </div>
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-9 px-4 py-2 has-[>svg]:px-3 w-full mt-auto bg-indigo-600 text-white hover:bg-indigo-700"
+        data-slot="button"
+      >
+        Select Plan
+      </button>
+    </div>
+    <div
+      class="bg-gray-900 rounded-xl shadow-md border border-gray-700 flex flex-col items-center p-8"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-trophy text-indigo-500 mb-4"
+        fill="none"
+        height="48"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"
+        />
+        <path
+          d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"
+        />
+        <path
+          d="M18 9h1.5a1 1 0 0 0 0-5H18"
+        />
+        <path
+          d="M4 22h16"
+        />
+        <path
+          d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"
+        />
+        <path
+          d="M6 9H4.5a1 1 0 0 1 0-5H6"
+        />
+      </svg>
+      <h3
+        class="text-2xl font-bold text-white mb-1"
+      >
+        Enterprise
+      </h3>
+      <div
+        class="text-gray-400 mb-4 text-center"
+      >
+        If you are a small business, please select this plan
+      </div>
+      <div
+        class="text-3xl font-bold mb-2 text-white"
+      >
+        $
+        599
+        <span
+          class="text-base font-normal text-gray-400"
+        >
+          /
+          yr
+        </span>
+      </div>
+      <div
+        class="text-gray-400 mb-6"
+      >
+        20
+         User
+        s
+        , Billed Yearly
+      </div>
+      <button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-9 px-4 py-2 has-[>svg]:px-3 w-full mt-auto bg-indigo-600 text-white hover:bg-indigo-700"
+        data-slot="button"
+      >
+        Select Plan
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PricingFeatureComparison match snapshot 1`] = `
+<div>
+  <div
+    class="overflow-x-auto bg-gray-900 rounded-xl border border-gray-700"
+  >
+    <table
+      class="w-full text-left"
+    >
+      <thead>
+        <tr>
+          <th
+            class="px-4 py-3 font-semibold text-gray-300"
+          >
+            Features
+          </th>
+          <th
+            class="px-4 py-3 font-semibold text-gray-300"
+          >
+            Starter
+          </th>
+          <th
+            class="px-4 py-3 font-semibold text-gray-300"
+          >
+            Pro
+          </th>
+          <th
+            class="px-4 py-3 font-semibold text-gray-300"
+          >
+            Enterprise
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="border-t border-gray-700 last:border-b"
+        >
+          <td
+            class="px-4 py-2 font-medium text-gray-400"
+          >
+            Alias record
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr
+          class="border-t border-gray-700 last:border-b"
+        >
+          <td
+            class="px-4 py-2 font-medium text-gray-400"
+          >
+            Anycast DNS
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr
+          class="border-t border-gray-700 last:border-b"
+        >
+          <td
+            class="px-4 py-2 font-medium text-gray-400"
+          >
+            Full API access
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-x text-gray-500 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6 6 18"
+              />
+              <path
+                d="m6 6 12 12"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+        </tr>
+        <tr
+          class="border-t border-gray-700 last:border-b"
+        >
+          <td
+            class="px-4 py-2 font-medium text-gray-400"
+          >
+            Multiple-layered DoS defense
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-x text-gray-500 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6 6 18"
+              />
+              <path
+                d="m6 6 12 12"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-x text-gray-500 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 6 6 18"
+              />
+              <path
+                d="m6 6 12 12"
+              />
+            </svg>
+          </td>
+          <td
+            class="px-4 py-2 text-center"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-check text-green-400 mx-auto"
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 6 9 17l-5-5"
+              />
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
