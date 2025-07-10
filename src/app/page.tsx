@@ -1,14 +1,8 @@
-import { Metadata } from "next";
 import KpiCardsGrid from "@/components/charts/dashboard/KpiCardsGrid";
 import ActiveUsersLineChart from "@/components/charts/dashboard/ActiveUsersLineChart";
 import PlanDistributionDoughnut from "@/components/charts/dashboard/PlanDistributionDoughnut";
 import RevenueBarChart from "@/components/charts/dashboard/RevenueBarChart";
 import DashboardTablesGrid from "@/components/charts/dashboard/DashboardTablesGrid";
-
-export const metadata: Metadata = {
-  title: "Dashboard Sass Admin",
-  description: "Dashboard Sass Admin",
-};
 
 export default function Home() {
   return (
