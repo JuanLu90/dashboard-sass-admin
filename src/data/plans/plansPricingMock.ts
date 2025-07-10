@@ -38,11 +38,11 @@ export const plansPricing = [
       "Multiple-layered DoS defense": true,
     },
   },
-];
+] as const;
 
 export const featureList = [
   "Alias record",
   "Anycast DNS",
   "Full API access",
   "Multiple-layered DoS defense",
-];
+] as const;

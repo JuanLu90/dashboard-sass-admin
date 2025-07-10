@@ -29,4 +29,4 @@ export const dashboardKpis = [
     caption: "Since last month",
     suffix: "%",
   },
-];
+] as const;

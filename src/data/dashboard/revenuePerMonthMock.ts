@@ -11,4 +11,4 @@ export const revenuePerMonthData = [
   { month: "Apr", revenue: 25900 },
   { month: "May", revenue: 26700 },
   { month: "Jun", revenue: 27300 },
-];
+] as const;

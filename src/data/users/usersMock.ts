@@ -329,4 +329,4 @@ export const usersMock = [
     lastActive: "2024-06-26 11:45",
     avatar: "https://ui-avatars.com/api/?name=Diego+Serrano",
   },
-];
+] as const;

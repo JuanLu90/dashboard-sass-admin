@@ -5,7 +5,7 @@ const plansDistribution = [
   { plan: "Basic", count: 560 },
   { plan: "Pro", count: 940 },
   { plan: "Enterprise", count: 152 },
-];
+] as const;
 
 export const plansDistributionData = {
   labels: plansDistribution.map((d) => d.plan),
@@ -16,4 +16,4 @@ export const plansDistributionData = {
       borderWidth: 0,
     },
   ],
-};
+} as const;

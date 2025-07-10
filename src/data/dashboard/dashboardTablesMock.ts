@@ -81,4 +81,4 @@ export const dashboardTablesData = {
       avatar: "https://ui-avatars.com/api/?name=María+Gómez",
     },
   ],
-};
+} as const;
