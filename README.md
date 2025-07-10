@@ -116,11 +116,31 @@ Modular and scalable architecture: Clear domain-based separation (charts, data, 
  
 ---
 
-## 🧪 Testing and Mock Data
+## 🧪 Testing & Mock Data
 
-- All mock data used for dashboards, charts, and tables is centralized in the `/src/data` directory.
-- API routes and tests both import their data from these mock files, ensuring consistency and maintainability.
-- This approach avoids data duplication and keeps both the application and the tests in sync.
+- **Test coverage:**  
+  ![Coverage Badge](https://img.shields.io/badge/coverage-94%25-brightgreen)
+- **Coverage summary:**  
+  - Statements: **95%**
+  - Branches: **90%**
+  - Functions: **72%**
+  - Lines: **95%**
+
+- **Mock data** for dashboards, charts, and tables is centralized in `/src/data`. Both API routes and tests import from these files, ensuring consistency and no duplication.
+- **Unit and integration tests** are included, covering all core dashboard components, business flows, and user navigation using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/).
+    - **Unit tests:** Validate rendering, edge cases, and UI states for individual components.
+    - **Integration tests:** Simulate user flows, table pagination, sidebar navigation, and full dashboard interaction.
+- **How to run:**
+    ```bash
+    npm run test
+    # or, for watch mode:
+    npm run test -- --watch
+    ```
+- To check coverage:
+    ```bash
+    npm run test -- --coverage
+    ```
+
 
 ---
  
