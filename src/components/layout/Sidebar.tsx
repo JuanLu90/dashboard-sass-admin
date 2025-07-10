@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, CreditCard, Github } from "lucide-react";
+import { LayoutDashboard, Users, CreditCard } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
