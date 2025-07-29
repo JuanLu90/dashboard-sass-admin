@@ -1,23 +1,29 @@
-# app/services/auth_service.py
-
+# backend/app/services/auth_service.py
 from sqlalchemy.orm import Session
 from app.models.user import User
 from app.schemas.user import UserCreate
-from app.utils.security import hash_password, verify_password, create_access_token
+from app.utils.security import hash_password, verify_password
+from fastapi import HTTPException, status
+from app.schemas.auth import LoginRequest
+from app.utils.jwt import create_access_token
 
-def get_user_by_email(db: Session, email: str):
-    return db.query(User).filter(User.email == email).first()
-
-def create_user(db: Session, user: UserCreate):
-    hashed = hash_password(user.password)
-    new_user = User(email=user.email, hashed_password=hashed)
-    db.add(new_user)
+def create_user(db: Session, user_data: UserCreate) -> User:
+    hashed_pw = hash_password(user_data.password)
+    user = User(email=user_data.email, hashed_password=hashed_pw)
+    db.add(user)
     db.commit()
-    db.refresh(new_user)
-    return new_user
-
-def authenticate_user(db: Session, email: str, password: str):
-    user = get_user_by_email(db, email)
-    if not user or not verify_password(password, user.hashed_password):
-        return None
+    db.refresh(user)
     return user
+
+def authenticate_user(db: Session, login_data: LoginRequest) -> User:
+    user = db.query(User).filter(User.email == login_data.email).first()
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if not verify_password(login_data.password, user.hashed_password):
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    return user
+
+def login_and_get_token(db: Session, login_data: LoginRequest) -> str:
+    user = authenticate_user(db, login_data)
+    token = create_access_token(data={"sub": user.email})
+    return token

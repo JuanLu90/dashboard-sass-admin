@@ -1,6 +1,6 @@
-# backend/app/schemas/user.py
+# backend/app/schemas/auth.py
 from pydantic import BaseModel, EmailStr
 
-class UserCreate(BaseModel):
+class LoginRequest(BaseModel):
     email: EmailStr
     password: str
