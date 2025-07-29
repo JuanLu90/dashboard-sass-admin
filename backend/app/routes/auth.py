@@ -7,6 +7,7 @@ from app.deps import get_db
 from app.models.user import User
 from app.schemas.auth import LoginRequest
 from app.services.auth_service import login_and_get_token
+from app.dependencies.auth import get_current_user
 
 router = APIRouter()
 
@@ -24,4 +25,12 @@ def login(login_data: LoginRequest, db: Session = Depends(get_db)):
     return {
         "access_token": token,
         "token_type": "bearer"
+    }
+
+
+@router.get("/me")
+def read_me(current_user: User = Depends(get_current_user)):
+    return {
+        "id": current_user.id,
+        "email": current_user.email
     }
