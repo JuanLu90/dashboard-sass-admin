@@ -74,7 +74,9 @@ npm install
 npm run dev
 ```
 
-### 👤 Demo user
+---
+
+## 👤 Demo user
 
 ```makefile
 email: test@example.com
