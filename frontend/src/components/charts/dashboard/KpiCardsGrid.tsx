@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import KpiCardsGridSkeleton from "./KpiCardsGridSkeleton";
 import { DashboardKpisSet } from "@/types/dashboard";
+import { apiFetch } from "@/lib/apiClient";
 
 const iconMap = {
   users: Users,
@@ -25,12 +26,12 @@ export default function KpiCardsGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/mock-cards-kpi")
-      .then((res) => res.json())
-      .then((data: DashboardKpisSet[]) => {
+    apiFetch<DashboardKpisSet[]>("/api/dashboard/kpis")
+      .then((data) => {
         setData(data);
         setLoading(false);
-      });
+      })
+      .catch(() => setLoading(false));
   }, []);
 
   if (loading || !data) return <KpiCardsGridSkeleton />;

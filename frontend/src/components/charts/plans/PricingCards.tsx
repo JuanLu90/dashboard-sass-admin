@@ -1,6 +1,10 @@
-import { plansPricing } from "../../../data/plans/plansPricingMock";
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Medal, Award, Trophy } from "lucide-react";
+import { apiFetch } from "@/lib/apiClient";
+import { PlansResponse } from "@/types/plans";
+import React from "react";
 
 const icons = {
   Starter: <Award size={48} className="text-indigo-500 mb-4" />,
@@ -9,9 +13,21 @@ const icons = {
 };
 
 export default function PricingCards() {
+  const [data, setData] = React.useState<PlansResponse | null>(null);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    apiFetch<PlansResponse>("/api/plans")
+      .then((plans) => setData(plans))
+      .catch((err) => console.error("Failed to fetch plans", err))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (!data || loading) return <p>Loading...</p>;
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      {plansPricing.map((plan) => (
+      {data.plans.map((plan) => (
         <div
           key={plan.name}
           className="bg-gray-900 rounded-xl shadow-md border border-gray-700 flex flex-col items-center p-8"

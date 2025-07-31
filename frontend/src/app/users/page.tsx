@@ -10,7 +10,6 @@ import {
   flexRender,
   ColumnDef,
 } from "@tanstack/react-table";
-import { usersMock } from "../../data/users/usersMock";
 import {
   Table,
   TableBody,
@@ -31,6 +30,7 @@ import { Button } from "@/components/ui/button";
 import { MoreVertical } from "lucide-react";
 import Image from "next/image";
 import { User } from "@/types/users";
+import { apiFetch } from "@/lib/apiClient";
 
 const statusColor: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
@@ -91,14 +91,24 @@ const columns: ColumnDef<User>[] = [
 ];
 
 export default function Users() {
+  const [data, setData] = React.useState<User[]>([]);
+  const [loading, setLoading] = React.useState(true);
+
   const [globalFilter, setGlobalFilter] = React.useState("");
   const [statusFilter, setStatusFilter] = React.useState<string | undefined>();
   const [planFilter, setPlanFilter] = React.useState<string | undefined>();
   const [pageIndex, setPageIndex] = React.useState(0);
   const pageSize = 8;
 
+  React.useEffect(() => {
+    apiFetch<User[]>("/api/users/users-data")
+      .then((users) => setData(users))
+      .catch((err) => console.error("Failed to fetch users", err))
+      .finally(() => setLoading(false));
+  }, []);
+
   const filteredData = React.useMemo(() => {
-    return usersMock.filter((user) => {
+    return data.filter((user) => {
       const filterMatch =
         user.name.toLowerCase().includes(globalFilter.toLowerCase()) ||
         user.email.toLowerCase().includes(globalFilter.toLowerCase());
@@ -106,7 +116,7 @@ export default function Users() {
       const planMatch = planFilter ? user.plan === planFilter : true;
       return filterMatch && statusMatch && planMatch;
     });
-  }, [globalFilter, statusFilter, planFilter]);
+  }, [data, globalFilter, statusFilter, planFilter]);
 
   const table = useReactTable({
     data: filteredData,
@@ -128,8 +138,8 @@ export default function Users() {
     pageCount: Math.ceil(filteredData.length / pageSize),
   });
 
-  const statusOptions = Array.from(new Set(usersMock.map((u) => u.status)));
-  const planOptions = Array.from(new Set(usersMock.map((u) => u.plan)));
+  const statusOptions = Array.from(new Set(data.map((u) => u.status)));
+  const planOptions = Array.from(new Set(data.map((u) => u.plan)));
 
   return (
     <div className="max-w-full w-full mx-auto space-y-6">
@@ -188,51 +198,55 @@ export default function Users() {
           </Button>
         </div>
       </div>
-      <div className="bg-gray-800 rounded-xl p-2 overflow-x-auto">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className="text-white">
-                    {flexRender(header.column.columnDef.header, header.getContext())}
-                  </TableHead>
-                ))}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <div className="flex items-center justify-end gap-2 mt-3">
-          <Button
-            variant="secondary"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Prev
-          </Button>
-          <span className="text-xs text-gray-400">
-            Page {pageIndex + 1} of {table.getPageCount()}
-          </span>
-          <Button
-            variant="secondary"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+      {loading ? (
+        <p className="text-gray-400">Loading users...</p>
+      ) : (
+        <div className="bg-gray-800 rounded-xl p-2 overflow-x-auto">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHead key={header.id} className="text-white">
+                      {flexRender(header.column.columnDef.header, header.getContext())}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id}>
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          <div className="flex items-center justify-end gap-2 mt-3">
+            <Button
+              variant="secondary"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Prev
+            </Button>
+            <span className="text-xs text-gray-400">
+              Page {pageIndex + 1} of {table.getPageCount()}
+            </span>
+            <Button
+              variant="secondary"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
