@@ -68,7 +68,7 @@ A modern admin dashboard template focused on **best practices, modular architect
 
 ---
 
-📈 Features Included
+## 📈 Features Included
 
 - KPI Cards: Metric cards with icons and percentage change.
 
