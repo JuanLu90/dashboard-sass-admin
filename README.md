@@ -35,10 +35,7 @@ It features a modern architecture with **Next.js 14 (frontend)** and **FastAPI (
 
 ---
 
-## 📂 Monorepo structure
-
-```plaintext
-## 📂 Folder Structure
+## 📂 Folder structure
 
 ```plaintext
 dashboard-saas-admin/
