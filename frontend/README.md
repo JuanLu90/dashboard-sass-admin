@@ -1,4 +1,4 @@
-# Dashboard SaaS Admin
+# Dashboard SaaS Admin -  Frontend
 
 A modern admin dashboard template focused on **best practices, modular architecture, and realistic UI/UX**, ideal for portfolios, technical interviews, and SaaS prototypes.
 
