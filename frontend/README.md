@@ -111,16 +111,4 @@ A modern admin dashboard template focused on **best practices, modular architect
     ```
 
 
----
- 
-⚙️ Local Setup & Development
-```
-git clone https://github.com/YOUR_USERNAME/dashboard-saas-admin.git
-npm install
-npm run dev
-```
-
-And go to http://localhost:3000
-
-
 
