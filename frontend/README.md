@@ -15,69 +15,38 @@ A modern admin dashboard template focused on **best practices, modular architect
 
 ---
 
-## 📂 Folder Structure
-
-```plaintext
-dashboard-saas-admin/
-├── .vscode/
-│   └── settings.json           # VSCode workspace config
-├── public/                     # Static files, icons, images
-├── src/
-│   ├── app/                    # Next.js pages and routing (App Router)
-│   │   ├── api/                # Mock API endpoints for data fetching
-│   │   ├── plans/              # Plans view
-│   │   ├── users/              # Users view
-│   │   ├── favicon.ico
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   ├── page.tsx            # Main dashboard page
-│   ├── components/
-│   │   ├── charts/             # All chart components and skeletons
-│   │   │   ├── dashboard/
-│   │   │   ├── plans/
-│   │   │   ├── users/
-│   │   ├── layout/             # Header, Sidebar, layout components
-│   │   ├── ui/                 # UI primitives (card, table, badge, skeleton, etc.)
-│   ├── data/                   # Local mock data, split by domain
-│   ├── lib/                    # Helpers, utilities, constants (colors, delays, etc.)
-│   ├── types/                  # TypeScript types and interfaces (by domain)
-├── .editorconfig
-├── .gitignore
-├── .prettierrc
-├── eslint.config.mjs
-├── jest.config.ts
-├── jest.setup.js
-├── next-env.d.ts
-├── next.config.ts
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-└── README.md
-```
-
----
-
 ## 🎯 Principles & Best Practices
 
-Modular and scalable architecture: Clear domain-based separation (charts, data, types, layouts…).
-- Charts & Tables:
-  - All charts use CSR (Client Side Rendering) with fetch to mock API endpoints and custom skeleton loaders.
-  - Each skeleton is isolated in its own file and rendered only when loading or when data is unavailable.
-  - Chart colors and config are centralized in `/lib/colors.ts` for visual consistency.
+### 🏗️ Modular and scalable architecture
+- Clear domain-based structure (charts, tables, data, types, layouts…) for maintainability and scalability.
+- Ready to integrate with a real API (FastAPI) or fallback to mock data for development and testing.
+- Reusable, isolated components with clear separation of concerns and loading states.
 
-- User Table:
-  - Advanced paginated table, user avatars, status badges, action dropdowns, etc.
-  - Mock data decoupled from UI; can be easily swapped for real API calls.
+### 📊 Charts & Tables
+- Modular charts (Line, Doughnut, Bar) with centralized color and config management in `/lib/colors.ts` for visual consistency.
+- Advanced data tables with pagination, user avatars, status badges, and action menus.
+- Mixed data sources (mock + real API) to simulate a functional SaaS environment and demonstrate backend integration.
 
-- Realistic latency simulation:
-  - Mock endpoints use randomized timeouts (randomDelay) to mimic microservices and independent widget loading.
-  - Each chart/table loads and appears asynchronously for realistic SaaS UX.
+### 🔒 Authentication and protected routes
+- Real authentication powered by FastAPI backend with JWT stored in httpOnly cookies.
+- Protected sections (`Plans`, `Settings`) only accessible to logged-in users, with automatic redirection to `/login`.
+- Demo user available (`demo@demo.com / 123456`) for recruiters to test the full experience without registering.
 
-- Strong TypeScript types:
-  - All major interfaces and types live in /types.
+### 🧠 Strong typing and code quality
+- Strict TypeScript types for all major entities (users, metrics, plans).
+- ESLint configuration for linting and Prettier for consistent formatting (with VSCode setup included).
+- Semantic commit convention (`feat:`, `fix:`, `refactor:`) for a clean and professional Git history.
 
-- Decoupled skeletons and loading states:
-  - Each loading component is separated from its main component for easy testing and reusability.
+### 🖥️ Professional UI/UX
+- Default dark theme with a minimalist, responsive design.
+- Fixed sidebar with icons (`lucide-react`) and dynamic states (lock icon on restricted routes).
+- Decoupled skeleton loaders for smooth asynchronous data loading and improved user experience.
+
+### 📈 Features included
+- KPI cards showing key metrics with percentage variation.
+- Charts and tables with realistic asynchronous loading and isolated components.
+- Architecture prepared for SSR/ISR and ready for production deployment.
+
 
 ---
 
