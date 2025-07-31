@@ -38,18 +38,62 @@ It features a modern architecture with **Next.js 14 (frontend)** and **FastAPI (
 ## 📂 Monorepo structure
 
 ```plaintext
+## 📂 Folder Structure
+
+```plaintext
 dashboard-saas-admin/
-├── frontend/ # App Next.js 14
-│ ├── src/app/ # Rutas y páginas
-│ ├── components/ # Layout, Sidebar, Header, UI...
-│ └── README.md
+├── backend/                   # FastAPI backend
+│   ├── app/
+│   │   ├── models/            # SQLAlchemy models
+│   │   ├── routes/            # API routes (auth, users, etc.)
+│   │   ├── schemas/           # Pydantic schemas
+│   │   ├── services/          # Business logic
+│   │   ├── utils/             # Security, helpers
+│   │   ├── db.py              # Database connection
+│   ├── main.py                # FastAPI entrypoint
+│   ├── requirements.txt       # Backend dependencies
+│   └── README.md              # Backend-specific documentation
 │
-├── backend/ # API FastAPI
-│ ├── app/ # Routes, models, schemas, utils
-│ ├── main.py
-│ └── README.md
+├── frontend/                  # Next.js 14 frontend
+│   ├── .vscode/
+│   │   └── settings.json      # VSCode workspace config
+│   ├── public/                # Static files, icons, images
+│   ├── src/
+│   │   ├── app/               # App Router: pages and routes
+│   │   │   ├── api/           # API routes (proxy to backend, auth endpoints)
+│   │   │   ├── login/         # Login page (with demo user support)
+│   │   │   ├── plans/         # Protected route: Plans view
+│   │   │   ├── settings/      # Protected route: Settings view
+│   │   │   ├── users/         # Public route: Users view
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx     # Root layout
+│   │   │   ├── page.tsx       # Public dashboard homepage
+│   │   ├── components/
+│   │   │   ├── charts/        # Charts & skeleton loaders
+│   │   │   │   ├── dashboard/
+│   │   │   │   ├── plans/
+│   │   │   │   ├── users/
+│   │   │   ├── layout/        # Header, Sidebar, Wrapper, AppLayout
+│   │   │   ├── ui/            # UI primitives (button, card, table, badge, tooltip, skeleton, etc.)
+│   │   ├── data/              # Local mock data (fallback when backend is offline)
+│   │   ├── lib/               # Utilities (colors, fetch helpers, token management)
+│   │   ├── types/             # TypeScript types and interfaces
+│   ├── .editorconfig
+│   ├── .gitignore
+│   ├── .prettierrc
+│   ├── eslint.config.mjs
+│   ├── jest.config.ts
+│   ├── jest.setup.js
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   └── README.md              # Frontend-specific documentation
 │
-└── README.md
+├── README.md                  # Main project documentation (fullstack overview)
+└── venv-dashboard-saas-admin/ # Python virtual environment (recommended outside repo)
 ```
 
 ---
