@@ -74,4 +74,11 @@ npm install
 npm run dev
 ```
 
+### 👤 Demo user
 
+```makefile
+email: test@example.com
+password: 123456
+```
+
+This unlocks protected paths (Plans) and removes the lock on the sidebar.
