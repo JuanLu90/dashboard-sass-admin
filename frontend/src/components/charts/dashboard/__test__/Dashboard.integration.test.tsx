@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import DashboardPage from "@/app/page";
-import { dashboardKpis } from "@/data/dashboard/kpiCardsMock";
-import { dashboardTablesData } from "@/data/dashboard/dashboardTablesMock";
-import { plansDistributionData } from "@/data/dashboard/planDistributionMock";
-import { revenuePerMonthData } from "@/data/dashboard/revenuePerMonthMock";
+import { dashboardKpis } from "@/tests/mocks/dashboard/kpiCardsMock";
+import { dashboardTablesData } from "@/tests/mocks/dashboard/dashboardTablesMock";
+import { plansDistributionData } from "@/tests/mocks/dashboard/planDistributionMock";
+import { revenuePerMonthData } from "@/tests/mocks/dashboard/revenuePerMonthMock";
 import { generateDays } from "@/lib/utils";
 import RootLayout from "@/app/layout";
 

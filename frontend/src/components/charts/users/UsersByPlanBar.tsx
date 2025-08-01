@@ -8,17 +8,14 @@ import {
   Legend,
 } from "chart.js";
 
-import { usersMock } from "@/data/users/usersMock";
+import { usersMock } from "../../../tests/mocks/users/usersMock";
 import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
 
 const planStats = Object.entries(
-  usersMock.reduce(
-    (acc, user) => {
-      acc[user.plan] = (acc[user.plan] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>,
-  ),
+  usersMock.reduce((acc, user) => {
+    acc[user.plan] = (acc[user.plan] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>),
 );
 
 const data = {

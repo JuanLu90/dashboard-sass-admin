@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import UsersPage from "@/app/users/page";
-import { usersMock } from "@/data/users/usersMock";
+import { usersMock } from "@/tests/mocks/users/usersMock";
 import userEvent from "@testing-library/user-event";
 
 beforeEach(() => {

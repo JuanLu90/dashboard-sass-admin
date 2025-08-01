@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import DashboardTablesGridSkeleton from "./DashboardTablesGridSkeleton";
 import { DashboardTableGrid } from "@/types/dashboard";
+import { apiFetch } from "@/lib/apiClient";
 
 const statusColors: Record<string, string> = {
   Active: "bg-green-900 text-green-400",
@@ -25,12 +26,12 @@ export default function DashboardTablesGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/mock-recent-grid")
-      .then((res) => res.json())
-      .then((data: DashboardTableGrid) => {
+    apiFetch<DashboardTableGrid>("/api/dashboard/tables")
+      .then((data) => {
         setData(data);
         setLoading(false);
-      });
+      })
+      .catch(() => setLoading(false));
   }, []);
 
   if (loading || !data) return <DashboardTablesGridSkeleton />;

@@ -14,6 +14,7 @@ import {
 import ActiveUsersLineChartSkeleton from "./ActiveUsersLineChartSkeleton";
 import { ActiveUserDay, LineChartData } from "@/types/dashboard";
 import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
+import { apiFetch } from "@/lib/apiClient";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
@@ -22,24 +23,22 @@ export default function ActiveUsersLineChartCSR() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/mock-active-users")
-      .then((res) => res.json())
-      .then((days: ActiveUserDay[]) => {
-        setData({
-          labels: days.map((d) => d.date),
-          datasets: [
-            {
-              label: "Active Users",
-              data: days.map((d) => d.users),
-              borderColor: COLOR_BLUE_500,
-              backgroundColor: COLOR_BLUE_500,
-              fill: true,
-              tension: 0.4,
-            },
-          ],
-        });
-        setLoading(false);
+    apiFetch<ActiveUserDay[]>("/api/dashboard/active-users").then((days: ActiveUserDay[]) => {
+      setData({
+        labels: days.map((d) => d.date),
+        datasets: [
+          {
+            label: "Active Users",
+            data: days.map((d) => d.users),
+            borderColor: COLOR_BLUE_500,
+            backgroundColor: COLOR_BLUE_500,
+            fill: true,
+            tension: 0.4,
+          },
+        ],
       });
+      setLoading(false);
+    });
   }, []);
 
   const options = {

@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import DashboardTablesGrid from "../DashboardTablesGrid";
-import { dashboardTablesData } from "@/data/dashboard/dashboardTablesMock";
+import { dashboardTablesData } from "@/tests/mocks/dashboard/dashboardTablesMock";
 
 beforeEach(() => {
   global.fetch = jest.fn(() =>

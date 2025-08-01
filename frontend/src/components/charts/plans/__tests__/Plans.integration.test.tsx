@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import PricingFeatureComparison from "../PricingFeatureComparison";
-import { plansPricing, featureList } from "@/data/plans/plansPricingMock";
+import { plansPricing, featureList } from "@/tests/mocks/plans/plansPricingMock";
 import userEvent from "@testing-library/user-event";
 import PricingCards from "../PricingCards";
 

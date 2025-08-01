@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import KpiCardsGrid from "../KpiCardsGrid";
-import { dashboardKpis } from "@/data/dashboard/kpiCardsMock";
+import { dashboardKpis } from "@/tests/mocks/dashboard/kpiCardsMock";
 
 describe("KpiCardsGrid", () => {
   beforeEach(() => {

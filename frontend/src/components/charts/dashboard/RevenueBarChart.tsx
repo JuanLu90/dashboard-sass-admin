@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import RevenueBarChartSkeleton from "./RevenueBarChartSkeleton";
 import { RevenueBarChartData, RevenuePerMonth } from "@/types/dashboard";
 import { COLOR_BLUE_500, COLOR_GRAY_700, COLOR_WHITE } from "@/lib/colors";
+import { apiFetch } from "@/lib/apiClient";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -21,9 +22,8 @@ export default function RevenueBarChart() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/mock-revenue-per-month")
-      .then((res) => res.json())
-      .then((data: RevenuePerMonth[]) => {
+    apiFetch<RevenuePerMonth[]>("/api/dashboard/revenue")
+      .then((data) => {
         setData({
           labels: data.map((d) => d.month),
           datasets: [
@@ -36,7 +36,8 @@ export default function RevenueBarChart() {
           ],
         });
         setLoading(false);
-      });
+      })
+      .catch(() => setLoading(false));
   }, []);
 
   const options = {
