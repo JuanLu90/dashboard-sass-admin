@@ -20,11 +20,10 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
+      const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
-        credentials: "include",
       });
 
       if (!res.ok) throw new Error("Credenciales incorrectas");
@@ -99,11 +98,10 @@ export default function LoginPage() {
               onClick={async () => {
                 setLoading(true);
                 try {
-                  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
+                  const res = await fetch("/api/auth/login", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email: "test@example.com", password: "123456" }),
-                    credentials: "include",
                   });
 
                   if (!res.ok) throw new Error("Could not log in demo session");
