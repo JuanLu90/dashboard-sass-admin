@@ -1,4 +1,6 @@
 from typing import List, Dict
+import random
+from datetime import datetime, timedelta
 
 def get_kpis() -> List[Dict]:
     return [
@@ -144,3 +146,12 @@ def get_revenue():
         { "month": "May", "revenue": 26700 },
         { "month": "Jun", "revenue": 27300 },
     ];
+
+
+def generate_days():
+    days = []
+    for i in range(30):
+        date = (datetime.now() - timedelta(days=(29 - i))).strftime("%y-%m-%d")
+        users = 80 + random.randint(0, 40)
+        days.append({"date": date, "users": users})
+    return days

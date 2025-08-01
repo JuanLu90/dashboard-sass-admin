@@ -51,3 +51,7 @@ class PlanDistributionResponse(BaseModel):
 class RevenueResponse(BaseModel):
     month: str
     revenue: int
+
+class ActiveUserDay(BaseModel):
+    date: str
+    users: int
