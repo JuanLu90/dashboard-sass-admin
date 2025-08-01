@@ -7,6 +7,7 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
       "Content-Type": "application/json",
       ...(options?.headers || {}),
     },
+    credentials: "include",
   });
 
   if (!res.ok) {
