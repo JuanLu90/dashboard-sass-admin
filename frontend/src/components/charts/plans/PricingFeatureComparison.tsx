@@ -4,6 +4,7 @@ import React from "react";
 import { Check, X } from "lucide-react";
 import { apiFetch } from "@/lib/apiClient";
 import { PlansResponse } from "@/types/plans";
+import PricingFeatureComparisonSkeleton from "./PricingFeatureComparisonSkeleton";
 
 export default function PricingFeatureComparison() {
   const [data, setData] = React.useState<PlansResponse | null>(null);
@@ -16,7 +17,7 @@ export default function PricingFeatureComparison() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (!data || loading) return <p>Loading...</p>;
+  if (!data || loading) return <PricingFeatureComparisonSkeleton />;
 
   return (
     <div className="overflow-x-auto bg-gray-900 rounded-xl border border-gray-700">

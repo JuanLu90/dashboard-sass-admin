@@ -5,6 +5,7 @@ import { Medal, Award, Trophy } from "lucide-react";
 import { apiFetch } from "@/lib/apiClient";
 import { PlansResponse } from "@/types/plans";
 import React from "react";
+import PricingCardsSkeleton from "./PricingCardsSkeleton";
 
 const icons = {
   Starter: <Award size={48} className="text-indigo-500 mb-4" />,
@@ -23,7 +24,7 @@ export default function PricingCards() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (!data || loading) return <p>Loading...</p>;
+  if (!data || loading) return <PricingCardsSkeleton />;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
