@@ -5,7 +5,7 @@ from app.routes import auth, dashboard, users, plans
 app = FastAPI()
 
 origins = [
-    "https://tu-app.vercel.app",
+    "https://dashboard-sass-admin.vercel.app",
     "http://localhost:3000"
 ]
 
