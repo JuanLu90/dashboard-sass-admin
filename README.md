@@ -168,13 +168,37 @@ cd backend
 python3 -m venv ../venv-dashboard-saas-admin
 source ../venv-dashboard-saas-admin/bin/activate
 pip install -r requirements.txt
+```
+**1. Create .env.development file (needed for DB connection):**
+```env
+DATABASE_URL=sqlite:///./app.db  # or your PostgreSQL connection URL
+```
+
+**2. (Optional) Seed demo data:**
+```bash
+python seed_data.py
+```
+**3. Run the backend server:**
+```bash
 uvicorn main:app --reload
 ```
+- Backend available at: http://127.0.0.1:8000
+- Swagger Docs: http://127.0.0.1:8000/docs
 
 ### 2️⃣ Frontend
 
 ```bash
 cd frontend
 npm install
+```
+
+**1. Create .env.local file:**
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
+
+**2. Run the development server:**
+```bash
 npm run dev
 ```
+- Frontend available at: http://localhost:3000
