@@ -51,7 +51,7 @@ This unlocks protected paths (Plans) and removes the lock on the sidebar.
 - ✅ **Public dashboard:** charts and tables accessible without login
 - ✅ **Professional design:** consistent design with dark mode default.
 - ✅ **Monorepo architecture:** clean separation between frontend and backend.
-- ✅ Deploy-ready: Vercel (frontend) + Render (backend + PostgreSQL).
+- ✅ **Deploy-ready:** Vercel (frontend) + Render (backend + PostgreSQL).
 
 ---
 
@@ -202,3 +202,37 @@ NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 npm run dev
 ```
 - Frontend available at: http://localhost:3000
+
+---
+
+## 🧪 Tests (unit + e2e)
+
+### ✅ Unit tests
+
+- **Framework:** Jest + React Testing Library
+- **Location:** frontend/src/**/__test__/*.test.tsx
+- **Execution:**
+```bash
+cd frontend
+npm run test
+```
+
+### 🚀 End-to-End (e2e) tests
+
+- **Framework:** Playwright
+- **Location:**: frontend/tests/e2e/*.spec.ts
+- **Installation Playwright:**
+```bash
+cd frontend
+npx playwright install
+```
+
+- **Execution** (requires active locale):
+
+```bash
+cd frontend
+npm run dev          # in other term
+npx playwright test
+```
+
+Make sure you have the backend running as well (uvicorn main:app --reload from /backend).
