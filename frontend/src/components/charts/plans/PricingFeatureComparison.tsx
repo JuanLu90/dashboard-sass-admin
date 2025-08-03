@@ -21,7 +21,7 @@ export default function PricingFeatureComparison() {
 
   return (
     <div className="overflow-x-auto bg-gray-900 rounded-xl border border-gray-700">
-      <table className="w-full text-left">
+      <table className="w-full text-left" aria-label="Feature comparison">
         <thead>
           <tr>
             <th className="px-4 py-3 font-semibold text-gray-300">Features</th>

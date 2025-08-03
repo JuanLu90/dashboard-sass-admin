@@ -1,4 +1,4 @@
-# Dashboard SaaS Admin -  Frontend
+# Dashboard SaaS Admin - Frontend
 
 A modern admin dashboard template focused on **best practices, modular architecture, and realistic UI/UX**, ideal for portfolios, technical interviews, and SaaS prototypes.
 
@@ -18,35 +18,40 @@ A modern admin dashboard template focused on **best practices, modular architect
 ## 🎯 Principles & Best Practices
 
 ### 🏗️ Modular and scalable architecture
+
 - Clear domain-based structure (charts, tables, data, types, layouts…) for maintainability and scalability.
 - Ready to integrate with a real API (FastAPI) or fallback to mock data for development and testing.
 - Reusable, isolated components with clear separation of concerns and loading states.
 
 ### 📊 Charts & Tables
+
 - Modular charts (Line, Doughnut, Bar) with centralized color and config management in `/lib/colors.ts` for visual consistency.
 - Advanced data tables with pagination, user avatars, status badges, and action menus.
 - Mixed data sources (mock + real API) to simulate a functional SaaS environment and demonstrate backend integration.
 
 ### 🔒 Authentication and protected routes
+
 - Real authentication powered by FastAPI backend with JWT stored in httpOnly cookies.
 - Protected sections (`Plans`, `Settings`) only accessible to logged-in users, with automatic redirection to `/login`.
 - Demo user available (`demo@demo.com / 123456`) for recruiters to test the full experience without registering.
 
 ### 🧠 Strong typing and code quality
+
 - Strict TypeScript types for all major entities (users, metrics, plans).
 - ESLint configuration for linting and Prettier for consistent formatting (with VSCode setup included).
 - Semantic commit convention (`feat:`, `fix:`, `refactor:`) for a clean and professional Git history.
 
 ### 🖥️ Professional UI/UX
+
 - Default dark theme with a minimalist, responsive design.
 - Fixed sidebar with icons (`lucide-react`) and dynamic states (lock icon on restricted routes).
 - Decoupled skeleton loaders for smooth asynchronous data loading and improved user experience.
 
 ### 📈 Features included
+
 - KPI cards showing key metrics with percentage variation.
 - Charts and tables with realistic asynchronous loading and isolated components.
 - Architecture prepared for SSR/ISR and ready for production deployment.
-
 
 ---
 
@@ -73,7 +78,8 @@ A modern admin dashboard template focused on **best practices, modular architect
 - KPI Cards: Metric cards with icons and percentage change.
 
 - Charts:
-  - Line chart (active users, last 30 days)
+
+  - Line chart (, last 30 days)
   - Doughnut chart (plans distribution)
   - Bar chart (monthly revenue)
 
@@ -82,14 +88,15 @@ A modern admin dashboard template focused on **best practices, modular architect
   - Mock API: All dashboard data fetched from mocked endpoints with randomized delays.
   - Custom skeleton loaders for each chart/table.
   - Architecture ready for SSR/ISR or backend integration.
- 
+
 ---
 
 ## 🧪 Testing & Mock Data
 
 - **Test coverage:**  
   ![Coverage Badge](https://img.shields.io/badge/coverage-94%25-brightgreen)
-- **Coverage summary:**  
+- **Coverage summary:**
+
   - Statements: **95%**
   - Branches: **90%**
   - Functions: **72%**
@@ -97,18 +104,15 @@ A modern admin dashboard template focused on **best practices, modular architect
 
 - **Mock data** for dashboards, charts, and tables is centralized in `/src/data`. Both API routes and tests import from these files, ensuring consistency and no duplication.
 - **Unit and integration tests** are included, covering all core dashboard components, business flows, and user navigation using [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/).
-    - **Unit tests:** Validate rendering, edge cases, and UI states for individual components.
-    - **Integration tests:** Simulate user flows, table pagination, sidebar navigation, and full dashboard interaction.
+  - **Unit tests:** Validate rendering, edge cases, and UI states for individual components.
+  - **Integration tests:** Simulate user flows, table pagination, sidebar navigation, and full dashboard interaction.
 - **How to run:**
-    ```bash
-    npm run test
-    # or, for watch mode:
-    npm run test -- --watch
-    ```
+  ```bash
+  npm run test
+  # or, for watch mode:
+  npm run test -- --watch
+  ```
 - To check coverage:
-    ```bash
-    npm run test -- --coverage
-    ```
-
-
-
+  ```bash
+  npm run test -- --coverage
+  ```

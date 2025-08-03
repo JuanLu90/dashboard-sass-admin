@@ -66,6 +66,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                data-testid="email-input"
               />
             </div>
 
@@ -79,6 +80,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
+                data-testid="password-input"
               />
             </div>
 
@@ -88,6 +90,7 @@ export default function LoginPage() {
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700"
               disabled={loading}
+              data-testid="submit-button"
             >
               {loading ? "Loading..." : "Log in"}
             </Button>
